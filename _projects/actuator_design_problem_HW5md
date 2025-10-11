@@ -3,7 +3,7 @@ layout: project
 title: Actuator Design Problem
 description: Homework 5 Assignment
 technologies: python
-image: /assets/images/ENGRD 2020 HW5 Design Samiha Anjum.png
+image: /assets/images/ENGRD 2020 HW 5 Design Samiha Anjum.png
 ---
 
 
@@ -15,13 +15,13 @@ The actuator is attached to a pin support (labeled B) and the bar used to hold t
 
 
 
-'''
+```
 Python Code Used:
 
 import math 
-h = 0.1
-fa = 35000
-max_height = 0.5
+h = 0.1 
+fa = 35000 
+max_height = 0.5 
 
 l_beam = 1.4 
 
