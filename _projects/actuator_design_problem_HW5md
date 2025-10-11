@@ -3,23 +3,53 @@ layout: project
 title: Actuator Design Problem
 description: Homework assignment
 technologies: python
-image: /assets/images/function-graph.png
+image: /assets/images/ENGRD 2020 HW5 Samiha Anjum.png
 ---
 
 
-As part of a class project...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec accumsan leo. Pellentesque ornare orci enim, vitae vestibulum nibh rutrum in. Donec pharetra risus nec ipsum fringilla, et mattis tortor auctor. Duis tortor ante, posuere ut odio a, scelerisque interdum purus. Pellentesque ornare orci enim, vitae vestibulum nibh rutrum in. Donec pharetra risus nec ipsum fringilla, et mattis tortor auctor. Duis tortor ante, posuere ut odio a, scelerisque interdum purus. Aenean faucibus luctus est, sed bibendum tellus. Nulla et magna urna. Morbi a ipsum sollicitudin, rhoncus risus volutpat, ultricies nunc. Quisque mollis finibus ante id imperdiet. Quisque vehicula elit sit amet felis facilisis fermentum.
-
-
-Aenean faucibus luctus est, sed bibendum tellus. Nulla et magna urna. Morbi a ipsum sollicitudin, rhoncus risus volutpat, ultricies nunc. Quisque mollis finibus ante id imperdiet. Quisque vehicula elit sit amet felis facilisis fermentum.
-
+As part of homework 5, I designed a system meant to lift a maximum amount of weight using an actuator. 
 
 This is how I solved the problem:
 
-```python
-    some code = 10;
-    plot();
-```
+The actuator is attached to a pin support (labeled B) and the bar used to hold the weight is attached to another pin support at the ground (labeled A). To find the maximum amount of weight the system can support, I drew a free body diagram constituting only pin A and the bar. In this FBD, I included the horizontal and vertical reaction forces at A, the weight of the load, and the force applied by the actuator (this force has a magnitude of 35 kN). By taking the moments about A, I came up with an equation for the weight, and using python I was able to find the maximum values of these measurements and the weight (ie. determining constraints for the length and change in height, as well as choosing a length dimension for the actuator and bar).
 
-Aenean tincidunt aliquam arcu, in euismod dui dapibus eu. In placerat, mi et ultrices consequat, quam ligula cursus mauris, in semper neque nibh at est. Maecenas hendrerit dignissim porta. Phasellus nec fringilla dolor. Etiam efficitur nisi sit amet velit pharetra feugiat. Etiam ultrices turpis at leo semper, eleifend scelerisque neque malesuada. Aliquam molestie congue rhoncus. Donec blandit neque dolor, nec tristique mi pretium ac. Mauris tincidunt ullamcorper magna, nec pellentesque mi sagittis quis.
+```python
+    import math 
+h = 0.1
+fa = 35000
+max_height = 0.5
+
+l_beam = 1.4 
+
+w_current = 0
+k = 0
+l_max = 0
+total_height = 0
+
+while k <= 0.45 and l_max <= 1.4 and total_height <= max_height:
+    delta_h = k
+    total_height = h + delta_h
+    l = math.sqrt((l_beam)**2 - (total_height)**2)
+    s = 0.5*l
+    fax_moment_arm = l*(fa*(total_height/(math.sqrt((total_height)**2)+(l**2))))
+    fay_moment_arm = (total_height)*(fa*(l/(math.sqrt((total_height)**2)+(l**2))))
+    w_max = (fax_moment_arm + fay_moment_arm)/s
+    if w_max > w_current:
+        w_current = w_max
+        l_max = l
+    k = k + 0.01
+    
+max_weight = w_current
+print(f'The maximum weight is {max_weight//1000} kN')
+print(f'The maximum length l is {l_max} meters')
+print(f'The value of s is {l_max/2} meters')
+print(f'The value of delta_h is {delta_h} meters')
+```
+From the code, we can determine that: 
+
+The maximum weight is 31.0 kN
+The maximum length l is 1.3 meters or 130 cm
+The value of s (the moment arm of the weight force) is 0.65 meters or 65 cm 
+The value of the change in height is 0.4 meters or 40 cm
 
 
