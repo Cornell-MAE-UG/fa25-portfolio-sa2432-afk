@@ -4,11 +4,6 @@ title: Actuator Design Problem
 description: Homework 5 Assignment
 technologies: python
 image: /assets/images/ENGRD 2020 HW 5 Design Samiha Anjum.png
-image: /assets/images/ENGRD 2020 Actuator Calculations
-image: /assets/images/ENGRD 2020 final beam design.png
-
-**As a continuation of my HW 5 assignment, here is an image detailing my calculations and parameters when designing the rigid beam.**
-For HW 12 the bar was redesigned as a beam; thus, the maximum deflection was calculated, and the design constraints required a small deflection with a low cross sectional area (most mass efficient). Therefore, I designed a beam of steel with a 27.25 mm diameter (the beam is cylindrical with a circular cross section). The image of this beam design is underneath my previous calculations.
 ---
 
 
