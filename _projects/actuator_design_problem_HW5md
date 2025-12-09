@@ -13,10 +13,6 @@ This is how I solved the problem:
 
 The actuator is attached to a pin support (labeled B) and the bar used to hold the weight is attached to another pin support at the ground (labeled A). To find the maximum amount of weight the system can support, I drew a free body diagram constituting only pin A and the bar. In this FBD, I included the horizontal and vertical reaction forces at A, the weight of the load, and the force applied by the actuator (this force has a magnitude of 35 kN). By taking the moments about A, I came up with an equation for the weight, and using python I was able to find the maximum values of these measurements and the weight (ie. determining constraints for the length and change in height, as well as choosing a length dimension for the actuator and bar).
 
-Attached with my HW 5 submission is an image detailing my calculations and parameters (added to this assignment on 12/8/25 as part of HW 12, the image below the first design)
-
-For HW 12 the bar was redesigned as a beam; thus, the maximum deflection was calculated, and the design constraints required a small deflection with a low cross sectional area (most mass efficient). Therefore, I designed a beam of steel with a 27.25 mm diameter (the beam is cylindrical with a circular cross section). The image of this beam design is underneath my previous calculations.
-
 ```
 Python Code Used:
 
