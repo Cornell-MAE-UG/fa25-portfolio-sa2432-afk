@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Actuator Design Problem - Beam Analysis
+title: Rigid Bar Calculations - Actuator Design Problem Continued
 description: Homework 12 Assignment
 image: /assets/images/ENGRD 2020 Actuator Calculations.png
 ---
