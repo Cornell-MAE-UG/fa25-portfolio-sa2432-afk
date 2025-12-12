@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Actuator Design Problem - Beam Analysis
+title: Final Beam Design
 description: Homework 12 Assignment
 image: /assets/images/ENGRD 2020 final beam design.png
 ---
